@@ -1,8 +1,8 @@
-name: Update AntiFilter List
+name: Update Blocklists
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 * * * *'  # Каждый час
   workflow_dispatch:
 
 jobs:
@@ -16,26 +16,50 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Process blocklist
+      - name: Process blocklists
         run: |
-          # Скачиваем и обрабатываем данные
-          curl -s -o raw.txt "https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/release/ru-blocked-all.txt"
-          grep -v '^#' raw.txt | sed -E 's/^[[:space:]]*//g; s/domain://gi' | awk 'NF' > cleaned.txt
-          
-          # Создаем итоговый файл
-          echo "payload:" > processed_antifilter.yaml
-          while read -r line; do
-            echo "  - DOMAIN,$line" >> processed_antifilter.yaml
-          done < cleaned.txt
-          
-          # Очищаем временные файлы
-          rm -f raw.txt cleaned.txt
+          # Функция для обработки блоклиста
+          process_list() {
+            local input_url=$1
+            local output_file=$2
+            
+            echo "Обработка $output_file..."
+            curl -s "$input_url" | \
+              grep -v '^#' | \
+              sed -E 's/^[[:space:]]*//g; s/domain://gi' | \
+              awk 'NF' > temp.txt
+            
+            echo "payload:" > "$output_file"
+            while read -r line; do
+              echo "  - DOMAIN,$line" >> "$output_file"
+            done < temp.txt
+            
+            rm -f temp.txt
+            echo "Готово: $output_file"
+          }
+
+          # Обрабатываем все списки
+          process_list "https://github.com/runetfreedom/russia-blocked-geosite/raw/release/antifilter-download-community.txt" "antifilter-community.yaml"
+          process_list "https://github.com/runetfreedom/russia-blocked-geosite/raw/release/antifilter-download.txt" "antifilter.yaml"
+          process_list "https://github.com/runetfreedom/russia-blocked-geosite/raw/release/refilter.txt" "refilter.yaml"
+          process_list "https://github.com/runetfreedom/russia-blocked-geosite/raw/release/ru-blocked-all.txt" "ru-blocked.yaml"
+          process_list "https://github.com/runetfreedom/russia-blocked-geosite/raw/release/ru-blocked-all.txt" "ru-blocked-all.yaml"
+          process_list "https://github.com/runetfreedom/russia-blocked-geosite/raw/release/win-spy.txt" "win-spy.yaml"
+
+          # Проверяем результаты
+          echo "=== Результаты обработки ==="
+          ls -la *.yaml
+          echo "Первые строки каждого файла:"
+          for file in *.yaml; do
+            echo "=== $file ==="
+            head -n 3 "$file"
+          done
 
       - name: Commit and push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Проверяем есть ли изменения
+          # Проверяем изменения
           if [ -z "$(git status --porcelain)" ]; then
             echo "Нет изменений для коммита"
             exit 0
@@ -45,8 +69,8 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           
-          # Коммитим только нужный файл
-          git add processed_antifilter.yaml
+          # Добавляем все YAML файлы
+          git add *.yaml
           git commit -m "Auto-update: $(date +'%Y-%m-%d %H:%M UTC')"
           
           # Синхронизируем с удаленным репозиторием
