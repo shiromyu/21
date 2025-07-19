@@ -72,7 +72,6 @@ payload:
   - DOMAIN,cdn.atdmt.com
   - DOMAIN,cds1.stn.llnw.net
   - DOMAIN,cds10.stn.llnw.net
-  - DOMAIN,cds27.ory.llnw.net
   - DOMAIN,cds1203.lon.llnw.net
   - DOMAIN,cds1204.lon.llnw.net
   - DOMAIN,cds1209.lon.llnw.net
@@ -133,12 +132,12 @@ payload:
   - DOMAIN,cds21309.lon.llnw.net
   - DOMAIN,cds21313.lon.llnw.net
   - DOMAIN,cds21321.lon.llnw.net
+  - DOMAIN,cds27.ory.llnw.net
   - DOMAIN,cds299.lcy.llnw.net
-  - DOMAIN,cds308.lcy.llnw.net
   - DOMAIN,cds30027.stn.llnw.net
+  - DOMAIN,cds308.lcy.llnw.net
   - DOMAIN,cds310.lcy.llnw.net
   - DOMAIN,cds38.ory.llnw.net
-  - DOMAIN,cds54.ory.llnw.net
   - DOMAIN,cds405.lcy.llnw.net
   - DOMAIN,cds406.lcy.llnw.net
   - DOMAIN,cds407.fra.llnw.net
@@ -160,6 +159,7 @@ payload:
   - DOMAIN,cds489.lcy.llnw.net
   - DOMAIN,cds493.lcy.llnw.net
   - DOMAIN,cds494.lcy.llnw.net
+  - DOMAIN,cds54.ory.llnw.net
   - DOMAIN,cds812.lon.llnw.net
   - DOMAIN,cds815.lon.llnw.net
   - DOMAIN,cds818.lon.llnw.net
@@ -178,10 +178,10 @@ payload:
   - DOMAIN,cs1.wpc.v0cdn.net
   - DOMAIN,cy2.vortex.data.microsoft.com.akadns.net
   - DOMAIN,db3aqu.atdmt.com
-  - DOMAIN,db5.settings.data.microsoft.com.akadns.net
-  - DOMAIN,db5.settings-win.data.microsoft.com.akadns.net
-  - DOMAIN,db5.vortex.data.microsoft.com.akadns.net
   - DOMAIN,db5-eap.settings-win.data.microsoft.com.akadns.net
+  - DOMAIN,db5.settings-win.data.microsoft.com.akadns.net
+  - DOMAIN,db5.settings.data.microsoft.com.akadns.net
+  - DOMAIN,db5.vortex.data.microsoft.com.akadns.net
   - DOMAIN,df.telemetry.microsoft.com
   - DOMAIN,diagnostics.support.microsoft.com
   - DOMAIN,eaus2watcab01.blob.core.windows.net
@@ -189,8 +189,8 @@ payload:
   - DOMAIN,ec.atdmt.com
   - DOMAIN,flex.msn.com
   - DOMAIN,g.msn.com
-  - DOMAIN,geo.settings.data.microsoft.com.akadns.net
   - DOMAIN,geo.settings-win.data.microsoft.com.akadns.net
+  - DOMAIN,geo.settings.data.microsoft.com.akadns.net
   - DOMAIN,geo.vortex.data.microsoft.com.akadns.net
   - DOMAIN,h1.msn.com
   - DOMAIN,h2.msn.com
@@ -326,8 +326,8 @@ payload:
   - DOMAIN,umwatson.events.data.microsoft.com
   - DOMAIN,umwatsonc.events.data.microsoft.com
   - DOMAIN,umwatsonc.telemetry.microsoft.us
-  - DOMAIN,v10.vortex-win.data.microsoft.com
   - DOMAIN,v10-win.vortex.data.microsoft.com.akadns.net
+  - DOMAIN,v10.vortex-win.data.microsoft.com
   - DOMAIN,v20.vortex-win.data.microsoft.com
   - DOMAIN,view.atdmt.com
   - DOMAIN,vortex-sandbox.data.microsoft.com
