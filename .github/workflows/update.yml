@@ -2,7 +2,7 @@ name: Update Blocklists
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Каждый час
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -18,61 +18,87 @@ jobs:
 
       - name: Process blocklists
         run: |
-          # Функция для обработки блоклиста
+          # Функция для обработки с подробным логированием
           process_list() {
             local input_url=$1
             local output_file=$2
             
-            echo "Обработка $output_file..."
-            curl -s "$input_url" | \
-              grep -v '^#' | \
-              sed -E 's/^[[:space:]]*//g; s/domain://gi' | \
-              awk 'NF' > temp.txt
+            echo "=== Обработка $output_file ==="
+            echo "Скачиваем из $input_url"
             
-            echo "payload:" > "$output_file"
+            # Скачивание с проверкой
+            if ! curl -s -o source.txt "$input_url"; then
+              echo "Ошибка скачивания $input_url"
+              return 1
+            fi
+            echo "Размер исходного файла: $(wc -l < source.txt) строк"
+            
+            # Очистка данных
+          echo "Очищаем данные..."
+          grep -v '^#' source.txt | \
+            sed -E 's/^[[:space:]]*//g; s/domain://gi' | \
+            awk 'NF {print $0}' > cleaned.txt
+          
+          echo "Очищено строк: $(wc -l < cleaned.txt)"
+          echo "Первые 3 строки очищенных данных:"
+          head -n 3 cleaned.txt
+          
+          # Формирование YAML
+          echo "Формируем $output_file"
+          echo "payload:" > "$output_file"
+          if [ -s cleaned.txt ]; then
             while read -r line; do
               echo "  - DOMAIN,$line" >> "$output_file"
-            done < temp.txt
-            
-            rm -f temp.txt
-            echo "Готово: $output_file"
+            done < cleaned.txt
+          else
+            echo "  # Нет данных" >> "$output_file"
+          fi
+          
+          echo "Результат:"
+          head -n 5 "$output_file"
+          echo "Всего строк: $(wc -l < "$output_file")"
+          echo ""
+          
+          # Очистка
+          rm -f source.txt cleaned.txt
           }
 
           # Обрабатываем все списки
-          process_list "https://github.com/runetfreedom/russia-blocked-geosite/raw/release/antifilter-download-community.txt" "antifilter-community.yaml"
-          process_list "https://github.com/runetfreedom/russia-blocked-geosite/raw/release/antifilter-download.txt" "antifilter.yaml"
-          process_list "https://github.com/runetfreedom/russia-blocked-geosite/raw/release/refilter.txt" "refilter.yaml"
-          process_list "https://github.com/runetfreedom/russia-blocked-geosite/raw/release/ru-blocked-all.txt" "ru-blocked.yaml"
-          process_list "https://github.com/runetfreedom/russia-blocked-geosite/raw/release/ru-blocked-all.txt" "ru-blocked-all.yaml"
-          process_list "https://github.com/runetfreedom/russia-blocked-geosite/raw/release/win-spy.txt" "win-spy.yaml"
+          process_list "https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/release/antifilter-download-community.txt" "antifilter-community.yaml"
+          process_list "https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/release/antifilter-download.txt" "antifilter.yaml"
+          process_list "https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/release/refilter.txt" "refilter.yaml"
+          process_list "https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/release/ru-blocked-all.txt" "ru-blocked.yaml"
+          process_list "https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/release/ru-blocked-all.txt" "ru-blocked-all.yaml"
+          process_list "https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/release/win-spy.txt" "win-spy.yaml"
 
-          # Проверяем результаты
-          echo "=== Результаты обработки ==="
-          ls -la *.yaml
-          echo "Первые строки каждого файла:"
+      - name: Verify results
+        run: |
+          echo "=== Проверка файлов ==="
           for file in *.yaml; do
-            echo "=== $file ==="
-            head -n 3 "$file"
+            echo "Файл: $file"
+            echo "Размер: $(wc -l < "$file") строк"
+            echo "Первые 5 строк:"
+            head -n 5 "$file"
+            echo ""
           done
 
       - name: Commit and push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Проверяем изменения
-          if [ -z "$(git status --porcelain)" ]; then
+          # Проверяем реальные изменения
+          if git diff --quiet --exit-code; then
             echo "Нет изменений для коммита"
             exit 0
           fi
 
-          # Настраиваем Git
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          
-          # Добавляем все YAML файлы
           git add *.yaml
           git commit -m "Auto-update: $(date +'%Y-%m-%d %H:%M UTC')"
           
-          # Синхронизируем с удаленным репозиторием
-          git pull --rebase origin main
+          # Принудительная синхронизация
+          git fetch origin
+          git reset --hard origin/main
+          git pull origin main
           git push origin HEAD:main
