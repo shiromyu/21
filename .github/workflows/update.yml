@@ -16,7 +16,7 @@ jobs:
           echo "payload:" > processed_antifilter.yaml
           curl -s https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/refs/heads/release/antifilter-download.txt | while read -r line; do
             if [ -n "$line" ]; then
-              echo "  - DOMAIN,$line" >> processed_sites.txt
+              echo "  - DOMAIN,$line" >> processed_antifilter.yaml
             fi
           done
       - name: Commit changes
