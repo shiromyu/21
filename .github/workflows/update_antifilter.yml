@@ -1,10 +1,9 @@
 name: Update AntiFilter List
 
 on:
-  push:
-    branches: [ main ]
   schedule:
     - cron: '0 * * * *'  # Каждый час
+  workflow_dispatch:     # Ручной запуск
 
 jobs:
   update:
@@ -13,43 +12,41 @@ jobs:
       contents: write
 
     steps:
-      # 1. Устанавливаем необходимые пакеты
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y curl sed
-
-      # 2. Загружаем репозиторий
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # 3. Скачиваем и обрабатываем данные
-      - name: Process sites
+      - name: Process blocklist
         run: |
+          # 1. Скачиваем исходный файл
+          curl -s -o raw.txt "https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/release/ru-blocked-all.txt"
+          
+          # 2. Очищаем данные (3 уровня обработки)
+          grep -v '^#' raw.txt |                 # Удаляем комментарии
+          sed -E 's/^[[:space:]]*//g' |         # Удаляем пробелы в начале
+          sed -E 's/domain://gi' |               # Удаляем domain: (регистронезависимо)
+          awk 'NF && !/^$/' > cleaned.txt       # Удаляем пустые строки
+
+          # 3. Форматируем в YAML
           echo "payload:" > processed_antifilter.yaml
-          curl -s "https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/release/ru-blocked-all.txt" | \
-            grep -v '^#' | \
-            sed -e 's/domain://g' -e 's/^[[:space:]]*//' -e '/^$/d' | \
-            while read -r line; do
-              echo "  - DOMAIN,$line" >> processed_antifilter.yaml
-            done
+          while read -r line; do
+            echo "  - DOMAIN,$line" >> processed_antifilter.yaml
+          done < cleaned.txt
 
-      # 4. Проверяем результат
-      - name: Validate output
-        run: |
-          echo "Первые 5 строк результата:"
+          # 4. Проверяем результат
+          echo "=== Первые 5 строк ==="
           head -n 6 processed_antifilter.yaml
-          echo "Всего строк: $(wc -l < processed_antifilter.yaml)"
+          echo "=== Последние 5 строк ==="
+          tail -n 5 processed_antifilter.yaml
+          echo "=== Всего строк: $(wc -l < processed_antifilter.yaml) ==="
 
-      # 5. Коммитим и пушим
-      - name: Commit and push
+      - name: Commit changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add processed_antifilter.yaml
-          git commit -m "Auto-update: $(date +'%Y-%m-%d %H:%M UTC')"
+          git commit -m "Autoupdate $(date +'%Y-%m-%d %H:%M')"
           git pull --ff-only
-          git push origin HEAD:main
+          git push
