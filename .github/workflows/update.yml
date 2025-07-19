@@ -1,4 +1,4 @@
-name: Update Blocklists
+name: Update Blocklists to Export Branch
 
 on:
   schedule:
@@ -10,71 +10,42 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout export branch
+        uses: actions/checkout@v4
+        with:
+          ref: export
+          fetch-depth: 0
 
-      - name: Setup debug environment
+      - name: Set up Git identity
         run: |
-          sudo apt-get update
-          sudo apt-get install -y jq
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
 
       - name: Process blocklists
         run: |
-          # Функция для обработки с максимальной детализацией
+          # Функция обработки
           process_list() {
             local url=$1
             local output=$2
             
             echo "🔄 Processing $output from $url"
+            curl -sSf "$url" | \
+              grep -v '^#' | \
+              sed -E 's/^[[:space:]]*//; s/[[:space:]]*$//; /^$/d; s/^domain://i' | \
+              sort -u > cleaned.tmp
             
-            # 1. Скачивание с проверкой
-            echo "⬇️ Downloading source file..."
-            if ! curl -sSf -o source.tmp "$url"; then
-              echo "❌ Failed to download $url"
-              return 1
-            fi
-            
-            # 2. Проверка содержимого
-            echo "🔍 Content inspection:"
-            echo "   File size: $(wc -l < source.tmp) lines"
-            echo "   First 3 lines:"
-            head -n 3 source.tmp || true
-            echo "   Last 3 lines:"
-            tail -n 3 source.tmp || true
-            
-            # 3. Очистка данных
-            echo "🧹 Cleaning data..."
-            grep -v '^#' source.tmp | \
-              sed -E 's/^[[:space:]]*//; s/[[:space:]]*$//; /^$/d; s/^domain://i' > cleaned.tmp
-            
-            # 4. Проверка очищенных данных
-            echo "✅ Cleaned data:"
-            echo "   Lines count: $(wc -l < cleaned.tmp)"
-            echo "   Sample content:"
-            head -n 5 cleaned.tmp || true
-            
-            # 5. Генерация YAML
-            echo "📦 Generating YAML..."
             echo "payload:" > "$output"
             if [ -s cleaned.tmp ]; then
               while read -r line; do
-                [[ -n "$line" ]] && echo "  - DOMAIN,$line" >> "$output"
+                echo "  - DOMAIN,$line" >> "$output"
               done < cleaned.tmp
             else
               echo "  # No valid domains found" >> "$output"
             fi
-            
-            # 6. Валидация результата
-            echo "🔎 Final validation:"
-            echo "   Output lines: $(wc -l < "$output")"
-            echo "   Result preview:"
-            head -n 5 "$output"
-            
-            # 7. Очистка
-            rm -f source.tmp cleaned.tmp
-            echo "✔️ Successfully processed $output"
-            echo ""
+            rm -f cleaned.tmp
           }
 
           # Обработка всех списков
@@ -85,30 +56,27 @@ jobs:
           process_list "https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/release/ru-blocked-all.txt" "ru-blocked.yaml"
           process_list "https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/release/win-spy.txt" "win-spy.yaml"
 
-      - name: Verify results
-        run: |
-          echo "📊 Final results:"
-          for file in *.yaml; do
-            echo "=== $file ==="
-            echo "Size: $(wc -l < "$file") lines"
-            echo "First 5 lines:"
-            head -n 5 "$file"
-            echo ""
-          done
-
-      - name: Commit changes
-        if: success()
+      - name: Commit and push to export branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # Проверяем изменения
           if [ -z "$(git status --porcelain)" ]; then
             echo "🔄 No changes detected"
             exit 0
           fi
           
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
           git add *.yaml
           git commit -m "Auto-update: $(date +'%Y-%m-%d %H:%M')"
-          git pull --rebase
-          git push
+          git push origin export
+
+      - name: Create Pull Request (if needed)
+        if: success()
+        run: |
+          # Создаем PR из export в main (если нужно)
+          gh pr create \
+            --head export \
+            --base main \
+            --title "Automatic export update" \
+            --body "Automatically generated export files" \
+            --label automated || echo "PR creation skipped"
