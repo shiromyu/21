@@ -1,0 +1,9 @@
+# NAME: Apps
+
+payload:
+  - PROCESS-NAME,qbittorrent.exe
+  - PROCESS-NAME,steam.exe
+  - PROCESS-NAME,steamwebhelper.exe
+  - PROCESS-NAME,steamservice.exe
+  - PROCESS-NAME,exitlag.exe
+  - PROCESS-NAME,ExitLagPmService.exe
