@@ -7,3 +7,5 @@ payload:
   - PROCESS-NAME,steamservice.exe
   - PROCESS-NAME,exitlag.exe
   - PROCESS-NAME,ExitLagPmService.exe
+  - PROCESS-NAME,javaw.exe
+  - PROCESS-NAME,java.exe
