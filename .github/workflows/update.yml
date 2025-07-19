@@ -1,4 +1,4 @@
-name: Update Processed List
+name: Update AntiFilter List
 
 on:
   push:
@@ -7,14 +7,14 @@ on:
     - cron: '0 * * * *'  # Каждый час
 
 jobs:
-  process:
+  update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Process sites
+      - name: Fetch and process sites
         run: |
           echo "payload:" > processed_antifilter.yaml
-          curl -s https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/refs/heads/release/antifilter-download.txt | while read -r line; do
+          curl -s "https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/release/ru-blocked-all.txt" | while read -r line; do
             if [ -n "$line" ]; then
               echo "  - DOMAIN,$line" >> processed_antifilter.yaml
             fi
@@ -23,6 +23,6 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add processed_sites.txt
-          git commit -m "Auto-update processed sites list"
+          git add processed_antifilter.yaml
+          git commit -m "Auto-update AntiFilter list [$(date +'%Y-%m-%d %H:%M')]"
           git push
