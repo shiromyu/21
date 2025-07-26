@@ -44,6 +44,7 @@ payload:
   - DOMAIN,apt.releases.hashicorp.com
   - DOMAIN,aqicn.org
   - DOMAIN,arc.intel.com
+  - DOMAIN,archiveofourown.org
   - DOMAIN,arm.com
   - DOMAIN,artifacts.elastic.co
   - DOMAIN,atlassian.com
