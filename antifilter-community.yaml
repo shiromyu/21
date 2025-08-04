@@ -252,6 +252,7 @@ payload:
   - DOMAIN,notepad-plus-plus.org
   - DOMAIN,novayagazeta.eu
   - DOMAIN,novayagazeta.ru
+  - DOMAIN,nsf.gov
   - DOMAIN,ntc.party
   - DOMAIN,nxp.com
   - DOMAIN,nyaa.si
@@ -401,6 +402,7 @@ payload:
   - DOMAIN,vot-tak.tv
   - DOMAIN,vrv.co
   - DOMAIN,vyos.io
+  - DOMAIN,vyos.net
   - DOMAIN,watchguard.com
   - DOMAIN,weather.com
   - DOMAIN,weblance.com.ua
