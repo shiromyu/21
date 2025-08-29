@@ -9,3 +9,5 @@ payload:
   - PROCESS-NAME,ExitLagPmService.exe
   - PROCESS-NAME,javaw.exe
   - PROCESS-NAME,java.exe
+  - PROCESS-NAME,Poe2Smoother.exe
+  - PROCESS-NAME,PoeSmoother.exe
