@@ -9,3 +9,9 @@ payload:
   - PROCESS-NAME,ExitLagPmService.exe
   - PROCESS-NAME,javaw.exe
   - PROCESS-NAME,java.exe
+  - PROCESS-NAME-REGEX,(?i).*\\Program Files \(x86\)\\Steam\\.*\.exe,DIRECT
+  - PROCESS-NAME-REGEX,(?i).*\\SteamLibrary\\.*\.exe$,DIRECT
+  - PROCESS-NAME-REGEX,(?i).*\\Epic Games\\.*\.exe$,DIRECT
+  - PROCESS-NAME-REGEX,(?i).*\\GOG Galaxy\\.*\.exe$,DIRECT
+  - PROCESS-NAME-REGEX,(?i).*\\Ubisoft Game Launcher\\.*\.exe$,DIRECT
+  - PROCESS-NAME-REGEX,(?i).*\\Origin\\.*\.exe$,DIRECT
