@@ -1,0 +1,11 @@
+# 18+ w|o ru and some eu ips and x.com
+
+payload:
+  - DOMAIN-SUFFIX,rule34video.com
+  - DOMAIN-SUFFIX,rule34gen.com
+  - DOMAIN-SUFFIX,iwara.tv
+  - DOMAIN-SUFFIX,boomio-cdn.com.com
+  - DOMAIN-KEYWORD,boomio-cdn.com
+  
+  - DOMAIN-KEYWORD,x.com
+  - DOMAIN-KEYWORD,twimg.com
