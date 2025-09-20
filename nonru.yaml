@@ -1,3 +1,5 @@
+# Someshit w/o ru ip
+
 payload:
   - PROCESS-NAME,DiscordPTB.exe
   - PROCESS-NAME,Discord.exe
