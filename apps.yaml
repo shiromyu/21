@@ -15,3 +15,5 @@ payload:
   - PROCESS-NAME-REGEX,(?i).*\\GOG Galaxy\\.*\.exe$,DIRECT
   - PROCESS-NAME-REGEX,(?i).*\\Ubisoft Game Launcher\\.*\.exe$,DIRECT
   - PROCESS-NAME-REGEX,(?i).*\\Origin\\.*\.exe$,DIRECT
+  - PROCESS-NAME-REGEX,(?i).*\\Program Files\\ExitLag\\.*\.exe$,DIRECT
+  - PROCESS-NAME-REGEX,(?i).*\\ExitLag\\.*\.exe$,DIRECT
