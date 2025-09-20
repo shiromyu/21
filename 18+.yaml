@@ -7,5 +7,5 @@ payload:
   - DOMAIN-SUFFIX,boomio-cdn.com.com
   - DOMAIN-KEYWORD,boomio-cdn.com
   
-  - DOMAIN-KEYWORD,x.com
-  - DOMAIN-KEYWORD,twimg.com
+  # - DOMAIN-KEYWORD,x.com
+  # - DOMAIN-KEYWORD,twimg.com
