@@ -405,6 +405,7 @@ payload:
   - DOMAIN,vrv.co
   - DOMAIN,vyos.io
   - DOMAIN,vyos.net
+  - DOMAIN,wall.alphacoders.com
   - DOMAIN,watchguard.com
   - DOMAIN,weather.com
   - DOMAIN,weblance.com.ua
