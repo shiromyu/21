@@ -18,3 +18,4 @@ payload:
   - PROCESS-NAME-REGEX,(?i).*\\Origin\\.*\.exe$,DIRECT
   - PROCESS-NAME-REGEX,(?i).*\\Program Files\\ExitLag\\.*\.exe$,DIRECT
   - PROCESS-NAME-REGEX,(?i).*\\ExitLag\\.*\.exe$,DIRECT
+  - PROCESS-NAME-REGEX,(?i).*\\TorrentsDownloads\\.*\.exe$,DIRECT
