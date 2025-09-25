@@ -407,6 +407,7 @@ payload:
   - DOMAIN,vyos.io
   - DOMAIN,vyos.net
   - DOMAIN,wall.alphacoders.com
+  - DOMAIN,wallpapercave.com
   - DOMAIN,watchguard.com
   - DOMAIN,weather.com
   - DOMAIN,weblance.com.ua
