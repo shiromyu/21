@@ -4,8 +4,10 @@ payload:
   - DOMAIN-SUFFIX,rule34video.com
   - DOMAIN-SUFFIX,rule34gen.com
   - DOMAIN-SUFFIX,iwara.tv
-  - DOMAIN-SUFFIX,boomio-cdn.com.com
+  - DOMAIN-SUFFIX,boomio-cdn.com
   - DOMAIN-KEYWORD,boomio-cdn.com
+  - DOMAIN-KEYWORD,redgifs.com
+  - DOMAIN-SUFFIX,redgifs.com
   
   # - DOMAIN-KEYWORD,x.com
   # - DOMAIN-KEYWORD,twimg.com
