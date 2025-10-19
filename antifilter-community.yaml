@@ -73,6 +73,7 @@ payload:
   - DOMAIN,canva.com
   - DOMAIN,cdn.id.supercell.com
   - DOMAIN,cdn.oaistatic.com
+  - DOMAIN,cdn2site.com
   - DOMAIN,cdninstagram.com
   - DOMAIN,certifytheweb.com
   - DOMAIN,chat.openai.com
