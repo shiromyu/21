@@ -2,22 +2,21 @@
 
 payload:
   - PROCESS-NAME,qbittorrent.exe
-  - PROCESS-NAME,steam.exe
-  - PROCESS-NAME,steamwebhelper.exe
-  - PROCESS-NAME,steamservice.exe
+  # - PROCESS-NAME,steam.exe
+  # - PROCESS-NAME,steamwebhelper.exe
+  # - PROCESS-NAME,steamservice.exe
   - PROCESS-NAME,exitlag.exe
   - PROCESS-NAME,ExitLagPmService.exe
   - PROCESS-NAME,javaw.exe
   - PROCESS-NAME,java.exe
   - PROCESS-NAME,weather.exe
   - PROCESS-NAME,osu!.exe
-  - PROCESS-NAME,torchlight_infinite.exe
-  - PROCESS-NAME-REGEX,(?i).*\\Program Files \(x86\)\\Steam\\.*\.exe,DIRECT
-  - PROCESS-NAME-REGEX,(?i).*\\SteamLibrary\\.*\.exe$,DIRECT
-  - PROCESS-NAME-REGEX,(?i).*\\Epic Games\\.*\.exe$,DIRECT
-  - PROCESS-NAME-REGEX,(?i).*\\GOG Galaxy\\.*\.exe$,DIRECT
-  - PROCESS-NAME-REGEX,(?i).*\\Ubisoft Game Launcher\\.*\.exe$,DIRECT
-  - PROCESS-NAME-REGEX,(?i).*\\Origin\\.*\.exe$,DIRECT
-  - PROCESS-NAME-REGEX,(?i).*\\Program Files\\ExitLag\\.*\.exe$,DIRECT
-  - PROCESS-NAME-REGEX,(?i).*\\ExitLag\\.*\.exe$,DIRECT
-  - PROCESS-NAME-REGEX,(?i).*\\TorrentsDownloads\\.*\.exe$,DIRECT
+  # - PROCESS-NAME-REGEX,(?i).*\\Program Files \(x86\)\\Steam\\.*\.exe,DIRECT
+  # - PROCESS-NAME-REGEX,(?i).*\\SteamLibrary\\.*\.exe$,DIRECT
+  # - PROCESS-NAME-REGEX,(?i).*\\Epic Games\\.*\.exe$,DIRECT
+  # - PROCESS-NAME-REGEX,(?i).*\\GOG Galaxy\\.*\.exe$,DIRECT
+  # - PROCESS-NAME-REGEX,(?i).*\\Ubisoft Game Launcher\\.*\.exe$,DIRECT
+  # - PROCESS-NAME-REGEX,(?i).*\\Origin\\.*\.exe$,DIRECT
+  # - PROCESS-NAME-REGEX,(?i).*\\Program Files\\ExitLag\\.*\.exe$,DIRECT
+  # - PROCESS-NAME-REGEX,(?i).*\\ExitLag\\.*\.exe$,DIRECT
+  # - PROCESS-NAME-REGEX,(?i).*\\TorrentsDownloads\\.*\.exe$,DIRECT
