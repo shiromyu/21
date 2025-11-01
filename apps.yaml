@@ -13,13 +13,21 @@ payload:
   - PROCESS-NAME,osu!.exe
   - PROCESS-NAME,PathOfExile_x64Steam.exe
   - PROCESS-NAME,PathOfExileSteam.exe
-  - PROCESS-NAME,LagoFast.exe
-  # - PROCESS-NAME-REGEX,(?i).*\\Program Files \(x86\)\\Steam\\.*\.exe,DIRECT
-  # - PROCESS-NAME-REGEX,(?i).*\\SteamLibrary\\.*\.exe$,DIRECT
-  # - PROCESS-NAME-REGEX,(?i).*\\Epic Games\\.*\.exe$,DIRECT
-  # - PROCESS-NAME-REGEX,(?i).*\\GOG Galaxy\\.*\.exe$,DIRECT
-  # - PROCESS-NAME-REGEX,(?i).*\\Ubisoft Game Launcher\\.*\.exe$,DIRECT
-  # - PROCESS-NAME-REGEX,(?i).*\\Origin\\.*\.exe$,DIRECT
-  # - PROCESS-NAME-REGEX,(?i).*\\Program Files\\ExitLag\\.*\.exe$,DIRECT
-  # - PROCESS-NAME-REGEX,(?i).*\\ExitLag\\.*\.exe$,DIRECT
-  # - PROCESS-NAME-REGEX,(?i).*\\TorrentsDownloads\\.*\.exe$,DIRECT
+  - PROCESS-NAME,LagoFast.exe,DIRECT
+  - PROCESS-NAME,lagofast.exe,DIRECT
+  - PROCESS-NAME-REGEX,(?i).*\\Program Files \(x86\)\\Steam\\.*\.exe,DIRECT
+  - PROCESS-NAME-REGEX,(?i).*\\SteamLibrary\\.*\.exe$,DIRECT
+  - PROCESS-NAME-REGEX,(?i).*\\Epic Games\\.*\.exe$,DIRECT
+  - PROCESS-NAME-REGEX,(?i).*\\GOG Galaxy\\.*\.exe$,DIRECT
+  - PROCESS-NAME-REGEX,(?i).*\\Ubisoft Game Launcher\\.*\.exe$,DIRECT
+  - PROCESS-NAME-REGEX,(?i).*\\Origin\\.*\.exe$,DIRECT
+  - PROCESS-NAME-REGEX,(?i).*\\Program Files\\ExitLag\\.*\.exe$,DIRECT
+  - PROCESS-NAME-REGEX,(?i).*\\ExitLag\\.*\.exe$,DIRECT
+  - PROCESS-NAME-REGEX,(?i).*\\TorrentsDownloads\\.*\.exe$,DIRECT
+  
+  - DOMAIN-SUFFIX,pathofexile.com,DIRECT
+  - DOMAIN-SUFFIX,grindinggear.com,DIRECT
+  - DOMAIN-SUFFIX,gpp.garena.com,DIRECT
+  - DOMAIN-SUFFIX,lagofast.com,DIRECT
+  - DOMAIN-SUFFIX,lagofast.net,DIRECT
+  - DOMAIN-KEYWORD,lagofast,DIRECT
