@@ -13,6 +13,7 @@ payload:
   - PROCESS-NAME,osu!.exe
   - PROCESS-NAME,PathOfExile_x64Steam.exe
   - PROCESS-NAME,PathOfExileSteam.exe
+  - PROCESS-NAME,LagoFast.exe
   # - PROCESS-NAME-REGEX,(?i).*\\Program Files \(x86\)\\Steam\\.*\.exe,DIRECT
   # - PROCESS-NAME-REGEX,(?i).*\\SteamLibrary\\.*\.exe$,DIRECT
   # - PROCESS-NAME-REGEX,(?i).*\\Epic Games\\.*\.exe$,DIRECT
