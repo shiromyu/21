@@ -7,7 +7,7 @@ payload:
   - DOMAIN-SUFFIX,instagram.com
   - DOMAIN-SUFFIX,steamidfinder.com
   - DOMAIN-SUFFIX,cdninstagram.com
-  - DOMAIN-SUFFIX,ttvnw.net
+  # - DOMAIN-SUFFIX,ttvnw.net
   - DOMAIN-SUFFIX,twitch.tv
   - DOMAIN-SUFFIX,imgur.com
   - DOMAIN-SUFFIX,zerochan.net
