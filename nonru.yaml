@@ -1,6 +1,8 @@
 # Someshit w/o ru ip
 
 payload:
+
+  - IP-CIDR,104.20.34.54/32
   - PROCESS-NAME,DiscordPTB.exe
   - PROCESS-NAME,Discord.exe
   - PROCESS-NAME,Spotify.exe
