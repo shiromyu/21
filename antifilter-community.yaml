@@ -169,6 +169,7 @@ payload:
   - DOMAIN,grok.com
   - DOMAIN,gulagu.net
   - DOMAIN,habr.com
+  - DOMAIN,happycolorapp.com
   - DOMAIN,hd.zetfix.online
   - DOMAIN,hdkinoteatr.com
   - DOMAIN,hdrezka.fm
