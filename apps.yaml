@@ -16,15 +16,15 @@ payload:
   - PROCESS-NAME,LagoFast.exe,DIRECT
   - PROCESS-NAME,lagofast.exe,DIRECT
   - PROCESS-NAME,prismlauncher.exe
-  - PROCESS-NAME-REGEX,(?i).*\\Program Files \(x86\)\\Steam\\.*\.exe,DIRECT
-  - PROCESS-NAME-REGEX,(?i).*\\SteamLibrary\\.*\.exe$,DIRECT
-  - PROCESS-NAME-REGEX,(?i).*\\Epic Games\\.*\.exe$,DIRECT
-  - PROCESS-NAME-REGEX,(?i).*\\GOG Galaxy\\.*\.exe$,DIRECT
-  - PROCESS-NAME-REGEX,(?i).*\\Ubisoft Game Launcher\\.*\.exe$,DIRECT
-  - PROCESS-NAME-REGEX,(?i).*\\Origin\\.*\.exe$,DIRECT
-  - PROCESS-NAME-REGEX,(?i).*\\Program Files\\ExitLag\\.*\.exe$,DIRECT
-  - PROCESS-NAME-REGEX,(?i).*\\ExitLag\\.*\.exe$,DIRECT
-  - PROCESS-NAME-REGEX,(?i).*\\TorrentsDownloads\\.*\.exe$,DIRECT
+  # - PROCESS-NAME-REGEX,(?i).*\\Program Files \(x86\)\\Steam\\.*\.exe,DIRECT
+  # - PROCESS-NAME-REGEX,(?i).*\\SteamLibrary\\.*\.exe$,DIRECT
+  # - PROCESS-NAME-REGEX,(?i).*\\Epic Games\\.*\.exe$,DIRECT
+  # - PROCESS-NAME-REGEX,(?i).*\\GOG Galaxy\\.*\.exe$,DIRECT
+  # - PROCESS-NAME-REGEX,(?i).*\\Ubisoft Game Launcher\\.*\.exe$,DIRECT
+  # - PROCESS-NAME-REGEX,(?i).*\\Origin\\.*\.exe$,DIRECT
+  # - PROCESS-NAME-REGEX,(?i).*\\Program Files\\ExitLag\\.*\.exe$,DIRECT
+  # - PROCESS-NAME-REGEX,(?i).*\\ExitLag\\.*\.exe$,DIRECT
+  # - PROCESS-NAME-REGEX,(?i).*\\TorrentsDownloads\\.*\.exe$,DIRECT
   
   - DOMAIN-SUFFIX,pathofexile.com,DIRECT
   - DOMAIN-SUFFIX,grindinggear.com,DIRECT
