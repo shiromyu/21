@@ -2,7 +2,7 @@
 
 payload:
 
-  - IP-CIDR,104.20.34.54/32
+  # - IP-CIDR,104.20.34.54/32
   - PROCESS-NAME,DiscordPTB.exe
   - PROCESS-NAME,Discord.exe
   - PROCESS-NAME,Spotify.exe
@@ -67,3 +67,4 @@ payload:
   - DOMAIN-SUFFIX,videodelivery.net
   - DOMAIN-SUFFIX,warp.plus
   - DOMAIN-SUFFIX,workers.dev
+  - DOMAIN-SUFFIX,shardprofit.xyz
