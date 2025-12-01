@@ -97,6 +97,7 @@ payload:
   - DOMAIN,d.docs.live.net
   - DOMAIN,data-cdn.mbamupdates.com
   - DOMAIN,database.clamav.net
+  - DOMAIN,debian.map.fastlydns.net
   - DOMAIN,deepl.com
   - DOMAIN,deezer.com
   - DOMAIN,dell.com
