@@ -8,6 +8,7 @@ payload:
   - DOMAIN-KEYWORD,boomio-cdn.com
   - DOMAIN-KEYWORD,redgifs.com
   - DOMAIN-SUFFIX,redgifs.com
+  - DOMAIN-SUFFIX,ukdevilz.com
   
   # - DOMAIN-KEYWORD,x.com
   # - DOMAIN-KEYWORD,twimg.com
