@@ -10,6 +10,8 @@ payload:
   - DOMAIN-SUFFIX,steamidfinder.com
   - DOMAIN-SUFFIX,cdninstagram.com
   # - DOMAIN-SUFFIX,ttvnw.net
+  - DOMAIN-SUFFIX,xdcdn.com #torchlight
+  - DOMAIN-SUFFIX,xd.com #torchlight
   - DOMAIN-SUFFIX,twitch.tv
   - DOMAIN-SUFFIX,imgur.com
   - DOMAIN-SUFFIX,zerochan.net
