@@ -17,6 +17,7 @@ payload:
   - PROCESS-NAME,lagofast.exe,DIRECT
   - PROCESS-NAME,prismlauncher.exe
   - PROCESS-NAME,7DaysToDie.exe
+  - PROCESS-NAME,torchlight_infinite.exe
   # - PROCESS-NAME-REGEX,(?i).*\\Program Files \(x86\)\\Steam\\.*\.exe,DIRECT
   # - PROCESS-NAME-REGEX,(?i).*\\SteamLibrary\\.*\.exe$,DIRECT
   # - PROCESS-NAME-REGEX,(?i).*\\Epic Games\\.*\.exe$,DIRECT
