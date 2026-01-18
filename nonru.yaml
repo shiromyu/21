@@ -23,6 +23,7 @@ payload:
   - DOMAIN-SUFFIX,cloudflare-ech.com
   - DOMAIN-SUFFIX,signin.aws.amazon.com
   - DOMAIN-SUFFIX,cloudfront.net
+  - DOMAIN-SUFFIX,skyblock.finance
   - DOMAIN-SUFFIX,s3.amazonaws.com
   - DOMAIN-SUFFIX,awsstatic.com
   - DOMAIN-SUFFIX,console.aws.a2z.com
