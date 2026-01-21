@@ -87,6 +87,7 @@ payload:
   - DOMAIN,claude.ai
   - DOMAIN,cloud.mongodb.com
   - DOMAIN,cloudflare-dns.com
+  - DOMAIN,codeium.com
   - DOMAIN,colta.ru
   - DOMAIN,community.cisco.com
   - DOMAIN,coomer.su
@@ -424,6 +425,7 @@ payload:
   - DOMAIN,wetransfer.com
   - DOMAIN,wheather.com
   - DOMAIN,windguru.cz
+  - DOMAIN,windsurf.com
   - DOMAIN,wixmp.com
   - DOMAIN,wunderground.com
   - DOMAIN,www.analog.com
