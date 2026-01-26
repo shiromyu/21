@@ -13,6 +13,7 @@ payload:
   - DOMAIN,account.protonmail.com
   - DOMAIN,accounts.spotify.com
   - DOMAIN,accounts.supercell.com
+  - DOMAIN,adblockplus.org
   - DOMAIN,adguard.com
   - DOMAIN,afcs.dellcdn.com
   - DOMAIN,aftermarket.schaeffler.com
