@@ -93,6 +93,7 @@ payload:
   - DOMAIN,community.cisco.com
   - DOMAIN,coomer.su
   - DOMAIN,copilot-proxy.githubusercontent.com
+  - DOMAIN,copilot-telemetry.githubusercontent.com
   - DOMAIN,crunchyroll.com
   - DOMAIN,cub.red
   - DOMAIN,czx.to
@@ -163,6 +164,7 @@ payload:
   - DOMAIN,gemini.google.com
   - DOMAIN,geni.us
   - DOMAIN,genius.com
+  - DOMAIN,githubcopilot.com
   - DOMAIN,gitlab.io
   - DOMAIN,gllto.glpals.com
   - DOMAIN,gnome-look.org
