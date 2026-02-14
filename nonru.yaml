@@ -13,7 +13,7 @@ payload:
   # - DOMAIN-SUFFIX,xdcdn.com #torchlight
   # - DOMAIN-SUFFIX,xd.com #torchlight
   - DOMAIN-SUFFIX,twitch.tv
-  - DOMAIN-SUFFIX,x.com
+  # - DOMAIN-SUFFIX,x.com
   - DOMAIN-SUFFIX,imgur.com
   - DOMAIN-SUFFIX,zerochan.net
   - DOMAIN-SUFFIX,hytale.com
