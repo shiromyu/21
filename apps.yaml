@@ -15,7 +15,7 @@ payload:
   - PROCESS-NAME,PathOfExileSteam.exe
   - PROCESS-NAME,LagoFast.exe,DIRECT
   - PROCESS-NAME,lagofast.exe,DIRECT
-  - PROCESS-NAME,prismlauncher.exe
+  # - PROCESS-NAME,prismlauncher.exe
   - PROCESS-NAME,7DaysToDie.exe
   - PROCESS-NAME,torchlight_infinite.exe
   # - PROCESS-NAME-REGEX,(?i).*\\Program Files \(x86\)\\Steam\\.*\.exe,DIRECT
