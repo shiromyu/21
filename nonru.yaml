@@ -77,6 +77,7 @@ payload:
   - DOMAIN-SUFFIX,safereactor.cc
   - DOMAIN-SUFFIX,live.com
   - DOMAIN-SUFFIX,minecraftservices.com
+  - DOMAIN-SUFFIX,ntc.party
   - DOMAIN-SUFFIX,steamstatic.com
   - DOMAIN-KEYWORD,reactor.cc
   - DOMAIN-KEYWORD,spinfit-eartip.com
