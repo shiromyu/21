@@ -9,6 +9,29 @@ payload:
   - PROCESS-NAME,BsgLauncher.exe
   - PROCESS-NAME,EscapeFromTarkov.exe
   - PROCESS-NAME,EscapeFromTarkov_BE.exe
+  - DOMAIN-SUFFIX,escapefromtarkov.com
+  - DOMAIN-SUFFIX,gw-pvp.eft.tarkov.com
+  - DOMAIN-SUFFIX,wsn-01.escapefromtarkov.com
+  - DOMAIN-SUFFIX,wsn-02.escapefromtarkov.com
+  - DOMAIN-SUFFIX,gw.prod.arena.tarkov.com
+  - DOMAIN-SUFFIX,escapefromtarkov.ru
+  - DOMAIN-SUFFIX,prod.escapefromtarkov.com
+  - DOMAIN-SUFFIX,profile.tarkov.com
+  - DOMAIN-SUFFIX,launcher.escapefromtarkov.com
+  - DOMAIN-SUFFIX,eft-store.com
+  - DOMAIN-SUFFIX,gw-pvp.eft.tarkov.com
+  - DOMAIN-SUFFIX,gw-pve.eft.tarkov.com
+  - DOMAIN-SUFFIX,status.escapefromtarkov.com
+  - DOMAIN-SUFFIX,challenges.cloudflare.com
+  - DOMAIN-SUFFIX,launcher-seq.eft-project.com
+  - DOMAIN-SUFFIX,wsn-01.escapefromtarkov.com
+  - DOMAIN-SUFFIX,wsn-02.escapefromtarkov.com
+  - DOMAIN-SUFFIX,wsn-03.escapefromtarkov.com
+  - DOMAIN-SUFFIX,gw.prod.arena.tarkov.com
+  - DOMAIN-SUFFIX,escapefromtarkov.ru
+  - DOMAIN-SUFFIX,battlestategames.com
+  - DOMAIN-SUFFIX,escapefromtarkov.com
+  - DOMAIN-SUFFIX,launcher-seq.eft-project.com
   - PROCESS-NAME,BEService_x64.exe
   - PROCESS-NAME,ExitLagPmService.exe
   - PROCESS-NAME,javaw.exe
