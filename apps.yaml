@@ -18,7 +18,7 @@ payload:
   - PROCESS-NAME,PathOfExileSteam.exe
   - PROCESS-NAME,LagoFast.exe,DIRECT
   - PROCESS-NAME,lagofast.exe,DIRECT
-  - PROCESS-NAME,prismlauncher.exe
+  # - PROCESS-NAME,prismlauncher.exe
   - DOMAIN-SUFFIX,microsoft.com
   - DOMAIN-SUFFIX,microsoftonline.com
   - DOMAIN-SUFFIX,windows.net
