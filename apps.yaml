@@ -14,8 +14,8 @@ payload:
   # - PROCESS-NAME,java.exe
   - PROCESS-NAME,weather.exe
   - PROCESS-NAME,osu!.exe
-  - PROCESS-NAME,PathOfExile_x64Steam.exe
-  - PROCESS-NAME,PathOfExileSteam.exe
+  # - PROCESS-NAME,PathOfExile_x64Steam.exe
+  # - PROCESS-NAME,PathOfExileSteam.exe
   - PROCESS-NAME,LagoFast.exe,DIRECT
   - PROCESS-NAME,lagofast.exe,DIRECT
   # - PROCESS-NAME,prismlauncher.exe
