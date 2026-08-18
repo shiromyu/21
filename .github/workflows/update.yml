@@ -57,8 +57,8 @@ jobs:
           process_list "https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/release/antifilter-download-community.txt" "antifilter-community.yaml"
           process_list "https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/release/antifilter-download.txt" "antifilter.yaml"
           process_list "https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/release/refilter.txt" "refilter.yaml"
-          process_list "https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/release/ru-blocked-all.txt" "ru-blocked-all.yaml"
-          process_list "https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/release/ru-blocked-all.txt" "ru-blocked.yaml"
+          # process_list "https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/release/ru-blocked-all.txt" "ru-blocked-all.yaml"
+          # process_list "https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/release/ru-blocked-all.txt" "ru-blocked.yaml"
           process_list "https://raw.githubusercontent.com/runetfreedom/russia-blocked-geosite/release/win-spy.txt" "win-spy.yaml"
 
       - name: Commit and push to export branch
