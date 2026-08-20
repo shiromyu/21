@@ -78,7 +78,7 @@ payload:
   - DOMAIN-SUFFIX,live.com
   - DOMAIN-SUFFIX,minecraftservices.com
   - DOMAIN-SUFFIX,ntc.party
-  - DOMAIN-SUFFIX,clutchkings
+  - DOMAIN-KEYWORD,clutchkings
   - DOMAIN-SUFFIX,steamstatic.com
   - DOMAIN-KEYWORD,reactor.cc
   - DOMAIN-KEYWORD,spinfit-eartip.com
@@ -106,3 +106,5 @@ payload:
   - DOMAIN-SUFFIX,howtogeek.com
   - DOMAIN-SUFFIX,skysound7.com
   - DOMAIN-SUFFIX,noodlemagazine.com
+  - DOMAIN-KEYWORD,thiscould
+  - DOMAIN-KEYWORD,wetranslate
