@@ -106,6 +106,8 @@ payload:
   - DOMAIN-SUFFIX,howtogeek.com
   - DOMAIN-SUFFIX,skysound7.com
   - DOMAIN-SUFFIX,noodlemagazine.com
+  - DOMAIN-SUFFIX,simgbb.com
+  - DOMAIN-SUFFIX,ibb.co
   - DOMAIN-KEYWORD,thiscould
   - DOMAIN-KEYWORD,wetranslate
   - DOMAIN-KEYWORD,soundcloud
