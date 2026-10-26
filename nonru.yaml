@@ -76,7 +76,7 @@ payload:
   - DOMAIN-SUFFIX,skytils.gg
   - DOMAIN-SUFFIX,safereactor.cc
   - DOMAIN-SUFFIX,live.com
-  - DOMAIN-SUFFIX,minecraftservices.com
+  # - DOMAIN-SUFFIX,minecraftservices.com
   - DOMAIN-SUFFIX,ntc.party
   - DOMAIN-KEYWORD,clutchkings
   - DOMAIN-SUFFIX,steamstatic.com
